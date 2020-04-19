@@ -2,11 +2,11 @@
 
 
 use PHPUnit\Framework\TestCase;
-use Wrurik\SudokuSolver\Exceptions\InvalidInputException;
-use Wrurik\SudokuSolver\Exceptions\InvalidSudokuException;
-use Wrurik\SudokuSolver\Solver;
+use Wrurik\Sudoku\Exceptions\InvalidInputException;
+use Wrurik\Sudoku\Exceptions\InvalidSudokuException;
+use Wrurik\Sudoku\Solver;
 
-class ResolveTest extends TestCase
+class SolverTest extends TestCase
 {
     private $sudoku = [
         7, 9, 1, 2, 5, 4, 6, 8, 3,
@@ -41,7 +41,7 @@ class ResolveTest extends TestCase
      */
     public function testSudokuResolved()
     {
-        $solver = new Wrurik\SudokuSolver\Solver($this->sudoku);
+        $solver = new Wrurik\Sudoku\Solver($this->sudoku);
 
         $this->assertEquals($this->resolvedSudoku, $solver->resolve());
     }
@@ -78,5 +78,21 @@ class ResolveTest extends TestCase
         $solver = Solver::fromColumns($columns);
 
         $this->assertEquals($this->resolvedSudoku, $solver->resolve());
+    }
+
+    /**
+     * @throws InvalidSudokuException
+     */
+    public function testSetEmptyValue()
+    {
+        $ar = array_replace($this->sudoku,
+            array_fill_keys(
+                array_keys($this->sudoku, 0),
+                'testing'
+            )
+        );
+
+        $solver = new Solver($ar);
+        $this->assertEquals($this->resolvedSudoku, $solver->setEmptyValue('testing')->resolve());
     }
 }

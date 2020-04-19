@@ -1,5 +1,5 @@
 {
-    "name": "wrurik/sudoku-solver",
+    "name": "wrurik/sudoku",
     "description": "Package to solve traditional sudoku puzzles",
     "type": "library",
     "license": "MIT",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wrurik\\SudokuSolver\\": "src/"
+            "Wrurik\\Sudoku\\": "src/"
         }
     }
 }

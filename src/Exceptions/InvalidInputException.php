@@ -1,8 +1,10 @@
 <?php
 
-namespace Wrurik\SudokuSolver\Exceptions;
+namespace Wrurik\Sudoku\Exceptions;
 
-class InvalidInputException extends \Exception
+use Exception;
+
+class InvalidInputException extends Exception
 {
 
 }

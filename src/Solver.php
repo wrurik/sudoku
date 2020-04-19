@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Wrurik\SudokuSolver;
+namespace Wrurik\Sudoku;
 
 
-use Wrurik\SudokuSolver\Exceptions\InvalidInputException;
-use Wrurik\SudokuSolver\Exceptions\InvalidSudokuException;
+use Wrurik\Sudoku\Exceptions\InvalidInputException;
+use Wrurik\Sudoku\Exceptions\InvalidSudokuException;
 use function count;
 
 class Solver
