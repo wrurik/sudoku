@@ -1,0 +1,22 @@
+{
+    "name": "wrurik/sudoku-solver",
+    "description": "Package to solve traditional sudoku puzzles",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rurik Wind",
+            "email": "wrurik@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wrurik\\SudokuSolver\\": "src/"
+        }
+    }
+}
